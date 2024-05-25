@@ -36,7 +36,7 @@ def get_db():
 
     mycursor = mydb.cursor()
 
-    mycursor.execute("SELECT * FROM smexy_table")
+    mycursor.execute("SELECT * FROM Persons")
 
     myresult = mycursor.fetchall()
 
@@ -46,7 +46,7 @@ def get_db():
 @app.route("/")
 def hello_world():
     res = get_db()
-    return f"<p>Hello, World!</p> ${str(res)}"
+    return f"<p>Hello, World!</p> {str(res)}"
 
 if __name__ == "__main__":
     app.run(host="localhost", port=8000, debug=True)
